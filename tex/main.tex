@@ -1,0 +1,369 @@
+% Template for PLoS
+% Version 3.1 February 2015
+%
+% To compile to pdf, run:
+% latex plos.template
+% bibtex plos.template
+% latex plos.template
+% latex plos.template
+% dvipdf plos.template
+%
+% % % % % % % % % % % % % % % % % % % % % %
+%
+% -- IMPORTANT NOTE
+%
+% This template contains comments intended 
+% to minimize problems and delays during our production 
+% process. Please follow the template instructions
+% whenever possible.
+%
+% % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Once your paper is accepted for publication, 
+% PLEASE REMOVE ALL TRACKED CHANGES in this file and leave only
+% the final text of your manuscript.
+%
+% There are no restrictions on package use within the LaTeX files except that 
+% no packages listed in the template may be deleted.
+%
+% Please do not include colors or graphics in the text.
+%
+% Please do not create a heading level below \subsection. For 3rd level headings, use \paragraph{}.
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- FIGURES AND TABLES
+%
+% Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+%
+% DO NOT INCLUDE GRAPHICS IN YOUR MANUSCRIPT
+% - Figures should be uploaded separately from your manuscript file. 
+% - Figures generated using LaTeX should be extracted and removed from the PDF before submission. 
+% - Figures containing multiple panels/subfigures must be combined into one image file before submission.
+% For figure citations, please use "Fig." instead of "Figure".
+% See http://www.plosone.org/static/figureGuidelines for PLOS figure guidelines.
+%
+% Tables should be cell-based and may not contain:
+% - tabs/spacing/line breaks within cells to alter layout or alignment
+% - vertically-merged cells (no tabular environments within tabular environments, do not use \multirow)
+% - colors, shading, or graphic objects
+% See http://www.plosone.org/static/figureGuidelines#tables for table guidelines.
+%
+% For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- EQUATIONS, MATH SYMBOLS, SUBSCRIPTS, AND SUPERSCRIPTS
+%
+% IMPORTANT
+% Below are a few tips to help format your equations and other special characters according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://www.plosone.org/static/latexGuidelines
+%
+% Please be sure to include all portions of an equation in the math environment.
+%
+% Do not include text that is not math in the math environment. For example, CO2 will be CO\textsubscript{2}.
+%
+% Please add line breaks to long display equations when possible in order to fit size of the column. 
+%
+% For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+%
+% % % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Please contact latex@plos.org with any questions.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% Use Unicode characters when possible
+\usepackage[utf8]{inputenc}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+% fixltx2e package for \textsubscript
+\usepackage{fixltx2e}
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref,hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% ligatures disabled
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = * }
+
+% rotating package for sideways tables
+\usepackage{rotating}
+
+% Remove comment for double spacing
+%\usepackage{setspace} 
+%\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in 
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+
+% Use the PLoS provided BiBTeX style
+\bibliographystyle{plos2015}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+% Leave date blank
+\date{}
+
+% Header and Footer with logo
+\usepackage{lastpage,fancyhdr,graphicx}
+\usepackage{epstopdf}
+\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\includegraphics[width=2.0in]{PLOS-Submission.eps}}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+\fancyheadoffset[L]{2.25in}
+\fancyfootoffset[L]{2.25in}
+\lfoot{\sf PLOS}
+
+%% Include all macros below
+
+\newcommand{\lorem}{{\bf LOREM}}
+\newcommand{\ipsum}{{\bf IPSUM}}
+
+%% END MACROS SECTION
+
+%% BEGIN Author macros and packages
+\usepackage{graphicx,comment}
+\graphicspath{{templates/}{fig}}
+%% END Author macros and packages
+
+\begin{document}
+\vspace*{0.35in}
+
+% Title must be 250 characters or less.
+% Please capitalize all terms in the title except conjunctions, prepositions, and articles.
+\begin{flushleft}
+{\Large
+\textbf\newline{An Integrated Cross-Sectoral Modeling Framework for Testing Ecosystem-Wide Effects of Human-Induced pressures in the Western Baltic Sea}
+}
+\newline
+% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
+\\
+Artur P. Palacz\textsuperscript{1,\Yinyang}*,
+J. Rasmus Nielsen\textsuperscript{2,\Yinyang},
+Asbjørn Christensen\textsuperscript{2,\textcurrency a},
+Henrik Gislason\textsuperscript{2,\ddag},
+Ayoe Hoff\textsuperscript{2,\ddag},
+Hans Staby Frost\textsuperscript{2},
+Marie Maar\textsuperscript{3,*},
+Kerstin Geitner,
+François Bastardie,
+Beth Fulton,
+?? with the VECTORS and IMAGE/MAFIA Consortia\textsuperscript{\textpilcrow}
+\\
+\bigskip
+\bf{1} National Institute of Aquatic Resources, Technical University of Denmark, Charlottenlund, Denmark
+\\
+\bf{2} Affiliation Dept/Program/Center, Copenhagen University, Copenhagen, Country
+\\
+\bf{3} Affiliation Dept/Program/Center, Århus University, Roskilde, Country
+\\
+\bigskip
+
+% Insert additional author notes using the symbols described below. Insert symbol callouts after author names as necessary.
+% 
+% Remove or comment out the author notes below if they aren't used.
+%
+% Primary Equal Contribution Note
+\Yinyang These authors contributed equally to this work.
+
+% Additional Equal Contribution Note
+% Also use this double-dagger symbol for special authorship notes, such as senior authorship.
+\ddag These authors also contributed equally to this work.
+
+% Current address notes
+\textcurrency a Insert current address of first author with an address update
+% \textcurrency b Insert current address of second author with an address update
+% \textcurrency c Insert current address of third author with an address update
+
+% Deceased author note
+\dag Deceased
+
+% Group/Consortium Author Note
+\textpilcrow Membership list can be found in the Acknowledgments section.
+
+% Use the asterisk to denote corresponding authorship and provide email address in note below.
+* arpa@aqua.dtu.dk
+
+\end{flushleft}
+% Please keep the abstract below 300 words
+\section*{Abstract}
+We present a new integrated modeling framework to evaluating scenarios of eutrophication effects on the whole marine ecosystem in the Western Baltic. The degree of eutrophication and large interannual variability in riverine deposition of nitrogen results in very complex biogeochemical interactions whose effects reach far beyond the basis of the marine food web. The presence of strong feedback mechanisms....Here we illustrate how such a framework can be applied to investigate the potential ecosystem-wide responses to several scenarios of altered deposition of nitrogen. the framework is intended to provide indications of system sensitivity and types of response in relative terms, not measured in absolute. used for management scenario evaluation. 
+
+
+% Please keep the Author Summary between 150 and 200 words
+% Use first person. PLOS ONE authors please skip this step. 
+% Author Summary not valid for PLOS ONE submissions.   
+%\section*{Author Summary}
+
+
+\linenumbers
+
+\section*{Introduction}
+Humans have exerted direct and indirect pressures on marine ecosystems because they strongly rely on their goods and services \citep{HalpernB08}. Land-based activities affect the runoff of pollutants and nutrients into coastal waters, whereas off-shore activities extract resources, impact upon hydrodynamics, and fundamentally alter biological species composition. Human activities vary in their intensity and their spatial foot-print in the marine
+environment. Understanding and quantifying the space- and time-varying distribution of human pressures is essential to the evaluation of tradeoffs between human uses of the oceans and protection of ecosystems and the services they provide \citep{Halpern08}. Models are key tools for integrating a wide range of system information in a common framework. Attempts to model exploited marine ecosystems can increase understanding of
+system dynamics; identify major processes, drivers and responses; highlight major gaps in knowledge; and provide a mechanism to virtually test management strategies before implementing them in reality \citep{FultonE11}. 
+\begin{comment}
+This needs to be paraphrased from the D1.5.3. Vectors Report
+\end{comment}
+
+Human induced pressures in the Baltic Sea are (i) strong, (ii) long lasting and (iii) affect multiple sectors of the marine ecosystem, from nutrient cycling to socio-economic processes. Most of the Baltic Sea basin can be characterized by Medium High to High Impact according to \citet{HalpernB08}. On top of that, only a small part of the basin has the potential to meet the criteria of Good Environmental Status. According to the latest eutrophication status assessment, despite measures taken to reduce external inputs of nitrogen and phosphorus to the sea, good status for eutrophication has not been reached yet \citep{HELCOM14}. The fact that eutrophication status was found to be unacceptable in all 17 open sea assessment units suggests that the Baltic Sea eutrophication problem is in fact expanding \citep{Fleming-LehtinenV15}. Estimating effects of eutrophication in the Kattegat area is recently of increased importance as this region has only been deemed as sub-GES in the latest assessment. The HEAT model is based only on 3 indicators which point at opposite conclusions, therefore, evaluation of new potential GES indicators relative to eutrophication status is timely. our proposed framework could serve as a means of that. 
+
+[check out Margit's deliverable here]
+
+There is currently a number of native Baltic Sea models that take into account multi-species interactions (from plankton to fish), perform bio-economic analyses and/or are assess ecosystem status as a function of a number of indicators. Yet, according to the criteria of \citet{RoseK12}, there is currently only one true end-to-end model which simulate ecosystem dynamics from nutrients to humans in the Baltic Sea: EcoSim-EcoPath (EwE) \citep{Harvey,Tomczakm10}. 
+
+"There are many features that ATLANTIS and Ecospace have in common, including habitat
+allocation, they both incorporate the full food-web from detritus up to marine mammals, they
+both include a fishing fleet redistribution model etc., and in some instances they are able to test
+similar management scenarios. However Ecospace is inherently less demanding and is more
+accommodating of easily derived observational datasets. But by contrast, ATLANTIS is more
+capable with regard to management strategy evaluation (MSE) and can investigate the
+consequences of a greater number of human pressures." - D153
+
+
+The challenge for the near and distant future is to design and implement efforts and platforms for integrated monitoring and assessment of the ecosystem-wide effects of these pressures, thus also providing a basis for potential holistic ecosystem-based management of marine resources. These challanges are already imposed on the scientific community via a number of new directives and policies not only on the national but also the EU level: MSFD, WD etc. Additional documents BSAP...
+
+"Point source inputs of nitrogen were manipulated to investigate indirect
+consequences elsewhere in the food-web. Two scenarios of nutrient reduction were simulated
+and resulted in reduced fish production in the region although the magnitude of effects was
+admittedly very small (despite very dramatic reductions in nutrient inputs). Simulations of this type are not possible using any of the other holistic modelling approaches (OSMOSE, Ecospace etc.) and hence, this is a truly unique capability of ATLANTIS \citep{Vectors-D513}." 
+
+Conceptually similar scenarios with EwE and its spatially-resolved Ecospace module require two-way coupling with coupled physical-plankton models (e.g. POLCOMS-ERSEM; \url{http://marine-opec.eu/}) or with dedicated eutrophication models (e.g. Corps of Engineers Integrated Compartment Water Quality Model in Chesapeak Bay; \citep{CercoC10}). In the Baltic Sea, eutrophication effects are also evaluated using a coupled HBM-ERGOM & SMS platform - providing the first such framework for operation ecology purposes as part of the FP7 Marine OPEC porject \url{http://marine-opec.eu/}. 
+
+\begin{comment}
+Get some info from here: http://marine-opec.eu/modelling/Modelling%20in%20the%20Baltic%20Sea_DTU.pdf and here http://marine-opec.eu/factsheets/FS4_NAtlanticRegional.pdf
+http://helcom.fi/baltic-sea-action-plan/partners-in-action/msfd
+\end{comment}
+
+
+The proposed integrated cross-sectorial modeling platform offers means of exploratory analysis of future scenarios providing key strategic advice complementing the currently used indicator-based assessment tools, such as HELCOM's HEAT 3.0 \citep{}. 
+
+
+- Eutrophication in the Baltic Sea. Specifically in the W Baltic. 
+- Tools for estimating ecosystem effects. 
+- Management considerations: BSAP, BSAP2. Need to adhere to more than one policy - MSFD, Water Directive etc. 
+- Here we propose a framework that is based on something that was developed and works well in AUS. 
+- Our hypothesis is that using an integrated modeling platform, we can estimate whole-of ecosystem responses to human induced pressures, such as eutrophication,and thus contribute with a knowledge base for hollistic management of marine resources in the Baltic Sea.
+
+% You may title this section "Methods" or "Models". 
+% "Models" is not a valid title for PLoS ONE authors. However, PLoS ONE
+% authors may use "Analysis" 
+\section*{Analysis}
+In this study we conduct exploratory scenario analysis using a combination of existing numerical models and a newly developed implementation of the whole-of ecosystem ATLANTIS model \citep{FultonE} in the Baltic Sea. The Baltic ATLANTIS model serves as the basis for the proposed integrated modeling framework in which results from other models can be incorporated and/or from which results can be passed onto another model. In this section we first characterize the individual models in terms of their structure and intended application scope. Then we describe the role of each model in the proposed integrated modeling framework. Finally, the set-up and corresponding assumptions of the different eutrophication scenarios tested within the framework are also provided. 
+
+\subsection*{The Baltic ATLANTIS end-to-end model}
+    - Since it's the first time this model is being introduced, need to present an evaluation of its fields. A lot needs to go into the Supplement Information (SI). SI should include: biogeochemistry, secondary production, higher trophic levels. Multipanel figures showing the quasi-equillibrium of all groups. 
+    \paragraph{Biogeochemistry}
+    - Winter and summer vertical profiles of nutrients (no3,nh4,sio4,o2) from two areas. 
+    \paragraph{Primary production}
+    - last year annual cycle of Chl-a compared with seawifs + surface map comparison with ERGOM. This needs to be in the main text. 
+    \paragraph{Secondary production}
+    -
+    \paragraph{Fish production}
+    - Pie charts or sth that shows relative mortality contributions from predation, linear and quadratic.
+    - In SI: Proportion of predators per key groups, emerging diet per key groups (ideally split by juv and adult).
+    
+\subsection{Linking with HBM/ERGOM}
+    - Refer to 
+\subsection{Linking with FishRent}
+
+
+% For figure citations, please use "Fig." instead of "Figure".
+
+
+% Results and Discussion can be combined.
+\section*{Results and discusion}
+
+\subsection*{From linking to assimilation and coupling}
+- Towards online assimilation or dynamic coupling. What, how and why? 
+- E.g. Fleet fishery from DISPLACE.
+
+\subsection*{Model limitations and assumptions}
+- No P limitation and no cyanobacteria. 
+- Mixing - perhaps the profiles are a bit too uniform in the winter but otherwise surface nutrient concentrations are too low. Consider an experiment with increased atmospheric deposition but lower forced vertical mixing?
+- Stock-recruitment. We could not parameterize the Ricker curves and used Beverton-Holt instead. Problems were likely due to mismatch in recruit and SSB levels compared to those used by Bastardie et al. to parameterize. 
+- Spatially uniform fishing included as linear mortality in fish.
+\begin{comment}
+I need to investigate for all fish whether there is constant recruitment, or is there some sensitivity to changes in SSB. 
+\end{comment}
+- Artificial denitrification/sediment burial. Buildup of surface nutrients in some coastal boxes (Pomerianian Bight and Arkona Basin area). Need to somehow refer to the limittion of modeling denitrification with such a low spatial resolution - ask Marie and/or Momme for a reference?
+- Poor parameterization of benthos, impaired by lack of biomass time series data. 
+- Need to deal with huge heterogeneity and sparsity of data. This includes problems with disaggregating national counts of e.g. seabirds, issues with migration of harbour porpoise, or complete lack of quantitative estimates of such important prey items as sticklebacks or gobies, and also coastal fishes. 
+
+\subsection{Future outlook}
+- What further model developments need to be done:
+\begin{itemize}
+\item Fleet-specific fishing efforts.
+\item Investigation of scenarios of other human-induced pressures such as fishing, spatial planning and also climate.
+\item Trophic cascades?
+\item Evaluation of existing and design and testing of new GES indicators
+\item Assimilation of nutrients and phytoplankton from HBM-ERGOM. Consideration of two-way coupling.
+\item Linking/coupling with Karin Timmerman's benthic model.
+\end{itemize}
+
+\section*{Conclusion}
+
+...
+Further development of this framework has the potential to provide a sound knowledge base and a powerful holistic management strategy evaluation tool for governing organizations such as the HELCOM Group for the Implementation of the Ecosystem Approach (HELCOM GEAR) which has been established with a purpose to steer on a managerial level the process of successful implementation of the HELCOM BSAP to meet the ecological objectives and achieve good ecological/ environmental status of the Baltic Sea by 2021 at the latest.
+
+\section*{Supporting Information}
+
+% Include only the SI item label in the subsection heading. Use the \nameref{label} command to cite SI items in the text.
+
+\section*{Acknowledgments}
+We would like to thank Marc Hufnagl, Matteo Sinerchia for ..., Bec Gorton for ...., and all those people for providing data and expert knowledge (Jane Behrens, Jordan Feeking, Heidi Andreasen, Joerg Dutz, Henrik Osterblom, Markus Ahola and other Finnish people from seals, Morten Vinther, Stefan Neuenfeldt, Martin Lindegren, Ken Andersen, Mark Payne, Henn Oyaveer, Thomas Kiørboe, Cornelia Jaspers, Margit Eero, Stine Dalman Ross, Stiig Marker,...
+The 
+
+\nolinenumbers
+
+%\section*{References}
+% Either type in your references using
+% \begin{thebibliography}{}
+% \bibitem{}
+% Text
+% \end{thebibliography}
+%
+% OR
+%
+% Compile your BiBTeX database using our plos2015.bst
+% style file and paste the contents of your .bbl file
+% here.
+% 
+
+%% BEGIN Author's bib file to compile and get the bbl file
+\bibliography{paper-DTUAqua-IMAGE.bib}
+% Before submission, replace these lines with contents of the bbl file (in: "Other logs & files")
+%% END bib compiling
+
+\end{document}
+
